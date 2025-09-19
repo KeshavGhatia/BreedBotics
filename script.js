@@ -259,56 +259,176 @@ function removeImage() {
 //     }, 2000);
 // }
 
+// async function recognizeBreed() {
+//     if (!imageInput.files[0]) return;
+
+//     // Show results section and loading
+//     resultsSection.style.display = 'block';
+//     loading.style.display = 'block';
+//     breedResult.style.display = 'none';
+
+//     try {
+//         // 1. Get backend ngrok URL
+//         const urlResponse = await fetch("https://fa9ba1038c45.ngrok-free.app/ngrok_url");
+//         const urlData = await urlResponse.json();
+//         const backendUrl = urlData.ngrok_url;
+
+//         // 2. Prepare file upload
+//         const formData = new FormData();
+//         formData.append("file", imageInput.files[0]);
+
+//         // 3. Send image to FastAPI /predict endpoint
+//         const response = await fetch(`${backendUrl}/predict`, {
+//             method: "POST",
+//             body: formData,
+//         });
+
+//         const data = await response.json();
+
+//         if (data.top3 && data.top3.length > 0) {
+//             const best = data.top3[0];
+
+//             document.getElementById('breedName').textContent = best.class;
+//             document.getElementById('breedOrigin').textContent = "Unknown";
+//             document.getElementById('breedCharacteristics').textContent = "N/A";
+//             document.getElementById('breedTemperament').textContent = "N/A";
+//             document.getElementById('breedCare').textContent = "N/A";
+//             document.getElementById('breedImage').src = "placeholder.jpg";
+//             document.getElementById('confidenceText').textContent = Math.round(best.confidence * 100) + '%';
+//             document.getElementById('confidenceFill').style.width = Math.round(best.confidence * 100) + '%';
+//         } else {
+//             document.getElementById('breedName').textContent = "No breed detected.";
+//         }
+//     } catch (err) {
+//         console.error("Prediction failed:", err);
+//         alert("Error connecting to backend.");
+//     }
+
+//     // Hide loading and show results
+//     loading.style.display = 'none';
+//     breedResult.style.display = 'block';
+// }
+
+
+
+// async function recognizeBreed() {
+//     if (!imageInput.files[0]) return;
+
+//     resultsSection.style.display = 'block';
+//     loading.style.display = 'block';
+//     breedResult.style.display = 'none';
+
+//     try {
+//         // ⚠️ replace with the latest ngrok URL every restart
+//         const backendBase = "https://8f087d0a6540.ngrok-free.app";
+
+//         const formData = new FormData();
+//         formData.append("file", imageInput.files[0]);
+
+//         const response = await fetch(`${backendBase}/predict`, {
+//             method: "POST",
+//             body: formData,
+//         });
+
+//         if (!response.ok) throw new Error("Backend error: " + response.status);
+
+//         const data = await response.json();
+
+//         if (data.top3 && data.top3.length > 0) {
+//             const best = data.top3[0];
+//             document.getElementById('breedName').textContent = best.class;
+//             document.getElementById('confidenceText').textContent = Math.round(best.confidence * 100) + '%';
+//             document.getElementById('confidenceFill').style.width = Math.round(best.confidence * 100) + '%';
+//             document.getElementById('breedImage').src = "placeholder.jpg";
+//         } else {
+//             document.getElementById('breedName').textContent = "No breed detected.";
+//         }
+//     } catch (err) {
+//         console.error("Prediction failed:", err);
+//         alert("Error connecting to backend.");
+//     }
+
+//     loading.style.display = 'none';
+//     breedResult.style.display = 'block';
+// }
+
+
 async function recognizeBreed() {
     if (!imageInput.files[0]) return;
 
-    // Show results section and loading
+    // Show UI
     resultsSection.style.display = 'block';
     loading.style.display = 'block';
     breedResult.style.display = 'none';
 
     try {
-        // 1. Get backend ngrok URL
-        const urlResponse = await fetch("https://83b0ee33841a.ngrok-free.app");
-        const urlData = await urlResponse.json();
-        const backendUrl = urlData.ngrok_url;
+        // ⚠️ Replace with your latest ngrok URL after each restart
+        const backendBase = "https://c5ef73bc0dca.ngrok-free.app";
 
-        // 2. Prepare file upload
+        // Prepare form data
         const formData = new FormData();
         formData.append("file", imageInput.files[0]);
 
-        // 3. Send image to FastAPI /predict endpoint
-        const response = await fetch(`${backendUrl}/predict`, {
+        // Send image to FastAPI
+        const response = await fetch(`${backendBase}/predict`, {
             method: "POST",
             body: formData,
         });
 
+        if (!response.ok) throw new Error("Backend error: " + response.status);
+
         const data = await response.json();
 
+        // Update UI with top prediction
         if (data.top3 && data.top3.length > 0) {
             const best = data.top3[0];
 
             document.getElementById('breedName').textContent = best.class;
-            document.getElementById('breedOrigin').textContent = "Unknown";
-            document.getElementById('breedCharacteristics').textContent = "N/A";
-            document.getElementById('breedTemperament').textContent = "N/A";
-            document.getElementById('breedCare').textContent = "N/A";
+            document.getElementById('confidenceText').textContent =
+                Math.round(best.confidence * 100) + '%';
+            document.getElementById('confidenceFill').style.width =
+                Math.round(best.confidence * 100) + '%';
             document.getElementById('breedImage').src = "placeholder.jpg";
-            document.getElementById('confidenceText').textContent = Math.round(best.confidence * 100) + '%';
-            document.getElementById('confidenceFill').style.width = Math.round(best.confidence * 100) + '%';
         } else {
             document.getElementById('breedName').textContent = "No breed detected.";
         }
     } catch (err) {
         console.error("Prediction failed:", err);
-        alert("Error connecting to backend.");
+        alert("Error connecting to backend: " + (err.message || ""));
+    } finally {
+        loading.style.display = 'none';
+        breedResult.style.display = 'block';
     }
-
-    // Hide loading and show results
-    loading.style.display = 'none';
-    breedResult.style.display = 'block';
 }
 
+
+
+// const sampleBreeds = [
+//     {
+//         name: 'Holstein Friesian',
+//         origin: 'Netherlands and Germany',
+//         characteristics: 'Large-sized dairy cattle with distinctive black and white markings. Known for high milk production and docile temperament.',
+//         temperament: 'Docile and easy to handle, making them ideal for dairy operations.',
+//         care: 'Requires high-quality feed and regular milking. Sensitive to heat stress.',
+//         image: 'https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+//     },
+//     {
+//         name: 'Angus',
+//         origin: 'Scotland',
+//         characteristics: 'Medium to large-sized beef cattle, naturally polled (hornless). Known for excellent meat quality and marbling.',
+//         temperament: 'Generally calm and easy to handle, good maternal instincts.',
+//         care: 'Hardy breed that adapts well to various climates. Requires good pasture management.',
+//         image: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+//     },
+//     {
+//         name: 'Jersey',
+//         origin: 'Jersey Island, Channel Islands',
+//         characteristics: 'Small dairy breed with light brown to fawn coloring. Produces rich, high-butterfat milk.',
+//         temperament: 'Alert and sometimes nervous, but generally manageable with proper handling.',
+//         care: 'Efficient feed converters, suitable for smaller operations. Need protection from extreme weather.',
+//         image: 'https://images.pexels.com/photos/1459978/pexels-photo-1459978.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop'
+//     }
+// ];
 
 // async function recognizeBreed() {
 //     if (!imageInput.files[0]) return;
@@ -390,6 +510,59 @@ async function recognizeBreed() {
 //         breedResult.style.display = "block";
 //     }
 // }
+
+
+
+// async function recognizeBreed() {
+//     if (!imageInput.files[0]) return;
+
+//     // Show UI
+//     resultsSection.style.display = 'block';
+//     loading.style.display = 'block';
+//     breedResult.style.display = 'none';
+
+//     try {
+//         // 1) Get ngrok URL from Vercel discovery service
+//         const res1 = await fetch("https://<your-vercel-domain>/api/ngrok");
+//         if (!res1.ok) throw new Error("Failed to get discovery URL");
+//         const json1 = await res1.json();
+//         const backendUrl = json1.ngrok_url;
+//         if (!backendUrl) throw new Error("Backend URL not set yet");
+
+//         // 2) Prepare image upload
+//         const formData = new FormData();
+//         formData.append("file", imageInput.files[0]);
+
+//         // 3) Send to FastAPI
+//         const res2 = await fetch(`${backendUrl}/predict`, {
+//             method: "POST",
+//             body: formData,
+//         });
+//         if (!res2.ok) throw new Error("Backend error: " + res2.status);
+//         const data = await res2.json();
+
+//         // 4) Update UI
+//         if (data.top3 && data.top3.length > 0) {
+//             const best = data.top3[0];
+//             document.getElementById("breedName").textContent = best.class;
+//             document.getElementById("confidenceText").textContent =
+//                 Math.round(best.confidence * 100) + "%";
+//             document.getElementById("confidenceFill").style.width =
+//                 Math.round(best.confidence * 100) + "%";
+//             document.getElementById("breedImage").src = "placeholder.jpg";
+//         } else {
+//             document.getElementById("breedName").textContent =
+//                 data.message || "No breed detected.";
+//         }
+//     } catch (err) {
+//         console.error("Prediction failed:", err);
+//         alert("Error connecting to backend: " + (err.message || ""));
+//     } finally {
+//         loading.style.display = "none";
+//         breedResult.style.display = "block";
+//     }
+// }
+
 
 
 
