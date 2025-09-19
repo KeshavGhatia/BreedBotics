@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreedWare - Cattle Recognition system</title>
+    <link rel="icon" href="./download.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head> 
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./download.png" alt="">
+                <i class="fas fa-cow"></i>
+                <span>CattleBreeds</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="breed-recognition.html" class="nav-link">Recognition</a></li>
+                <li><a href="animal-registration.html" class="nav-link">Registration</a></li>
+                <li><a href="upgrade.html" class="nav-link ">Upgrade</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="signup.html" class="nav-link">Signup</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="glass-card hero-card">
+                <h1 class="hero-title">Cattle Breeds Recognition System</h1>
+                <p class="hero-description">
+                    Advanced AI-powered system to identify and classify cattle breeds instantly. 
+                    Empowering farmers with smart technology for better livestock management.
+                </p>
+                <div class="hero-buttons">
+                    <a href="breed-recognition.html" class="btn btn-primary">
+                        <i class="fas fa-camera"></i>
+                        Try Recognition
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Demo Video Section -->
+    <section id="demo-video" class="demo-video-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 data-translate="demo_title">See How It Works</h2>
+                <p data-translate="demo_description">Watch our demo video to understand how easy it is to identify cattle breeds</p>
+            </div>
+            <div class="video-container glass-card fade-in">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="./YouCut_20250919_154853680.mp4" 
+                        title="Cattle Breeds Recognition Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Cattle Breed Recognition Matters</h2>
+                <p>Understanding the importance of accurate breed identification in modern agriculture</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Improved Breeding Programs</h3>
+                    <p>Accurate breed identification helps farmers make informed decisions about breeding programs, leading to better genetic diversity and healthier livestock.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Enhanced Productivity</h3>
+                    <p>Understanding breed characteristics allows farmers to optimize feeding, housing, and care practices for maximum milk and meat production.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Disease Prevention</h3>
+                    <p>Different breeds have varying susceptibilities to diseases. Proper identification helps in implementing targeted health management strategies.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Market Value</h3>
+                    <p>Accurate breed identification ensures fair pricing and helps farmers get the best market value for their livestock.</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                       <i class="fa-regular fa-lightbulb"></i>
+                    </div>
+                    <h3>Our vision</h3>
+                    <p>We are building an integrated digital cow-care ecosystem: medicine schedules, feeding plans, productivity tracking, vaccination alerts, and on-demand expert support — all from one app to improve cattle health and farmer income</p>
+                </div>
+                <div class="about-card glass-card">
+                    <div class="about-icon">
+                       <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <h3>Direct Dairy Connect</h3>
+                    <p>Our platform empowers local farmers and dairies to directly connect with customers, ensuring pure milk, curd, and dairy products — fresh and free from adulteration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Features</h2>
+                <p>Cutting-edge technology for accurate cattle breed identification</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Easy Image Upload</h3>
+                    <p>Simply upload a clear image of your cattle and let our AI do the rest. Supports multiple image formats.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Recognition</h3>
+                    <p>Advanced machine learning algorithms trained on thousands of cattle images for accurate breed identification.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Detailed Breed Information</h3>
+                    <p>Get comprehensive details about identified breeds including origin, characteristics, and care recommendations.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access the system from anywhere using your smartphone or tablet with our responsive design.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Animal Registration</h3>
+                    <p>Complete digital registration system for cattle with detailed information management and tracking.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Comprehensive Database</h3>
+                    <p>Our system recognizes over 50 different cattle breeds from around the world with high accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <!-- Analytics Section Start -->
+<section class="charts">
+  <h2 style="text-align:center; margin-bottom:20px; color: #054620; font-size: 2.2rem;"> 📊 Farm Analytics Dashboard</h2>
+  
+  <div style="text-align:center; margin-bottom:20px;">
+    <button id="toggleView" style="padding:10px 20px; border:none; border-radius:8px; background:#27ae60; color:#fff; cursor:pointer; font-weight:bold;">
+      Switch to Yearly View
+    </button>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-container">
+      <h3>Cattle Registered</h3>
+      <canvas id="cattleChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Milk Yield</h3>
+      <canvas id="milkChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Health Alerts</h3>
+      <canvas id="healthChart"></canvas>
+    </div>
+  </div>
+</section>
+<!-- Analytics Section End -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Cattle Registered Chart
+  new Chart(document.getElementById("cattleChart"), {
+    type: 'bar',
+    data: {
+      labels: ["Gir", "Sahiwal", "Murrah", "Red Sindhi"],
+      datasets: [{
+        label: "No. of Cattle",
+        data: [25, 18, 30, 12],
+        backgroundColor: "rgba(46, 204, 113, 0.7)"
+      }]
+    }
+  });
+
+  // Milk Yield Chart
+  new Chart(document.getElementById("milkChart"), {
+    type: 'line',
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+      datasets: [{
+        label: "Milk Yield (Liters)",
+        data: [150, 180, 200, 170, 210],
+        borderColor: "rgba(52, 152, 219, 1)",
+        fill: false
+      }]
+    }
+  });
+
+  // Health Alerts Chart
+  new Chart(document.getElementById("healthChart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Vaccinated", "Pending", "Critical"],
+      datasets: [{
+        data: [70, 20, 10],
+        backgroundColor: ["#2ecc71", "#f1c40f", "#e74c3c"]
+      }]
+    }
+  });
+</script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for support or inquiries</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form glass-card">
+                    <form id="contactForm" action="https://formspree.io/f/mblangwg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                    <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(err => {
+                    throw new Error(err.error || 'Form submission error');
+                });
+            }
+        })
+        .then(data => {
+            alert("Your message has been sent successfully!");
+            form.reset();
+        })
+        .catch(error => {
+            alert("Error: " + error.message);
+        });
+    });
+</script>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>123 Agriculture Street<br>Farm City, FC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@cattlebreeds.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--     
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> -->
+    
+    
+    <!-- <iframe
+       allow="microphone;"
+       width="350"
+       height="430"
+       src="https://console.dialogflow.com/api-client/demo/embedded/ee605e66-5085-413c-b3c7-bd007646bf78">
+    </iframe> -->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cow"></i>
+                        <span>CattleBreeds</span>
+                    </div>
+                    <p>Advanced AI-powered cattle breed recognition system for modern agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="breed-recognition.html">Recognition</a></li>
+                        <li><a href="animal-registration.html">Registration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cattle Breeds Recognition System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> -->
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="Breed Bot" 
+        agent-id="ee605e66-5085-413c-b3c7-bd007646bf78" 
+        language-code="en"
+     style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    </df-messenger>
+
+<script>
+
+
+
+  // Cattle Registered Chart
+  const cattleChart = new Chart(document.getElementById("cattleChart"), {
+    type: 'bar',
+    data: {
+      labels: ["Gir", "Sahiwal", "Murrah", "Red Sindhi"],
+      datasets: [{
+        label: "No. of Cattle",
+        data: [25, 18, 30, 12],
+        backgroundColor: [
+          "rgba(46, 204, 113, 0.7)",
+          "rgba(52, 152, 219, 0.7)",
+          "rgba(241, 196, 15, 0.7)",
+          "rgba(231, 76, 60, 0.7)"
+        ]
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+  });
+
+  // Milk Yield Chart (Line with toggle)
+  const milkCtx = document.getElementById("milkChart").getContext("2d");
+  const monthlyData = [150, 180, 200, 170, 210, 190];
+  const yearlyData = [1200, 1350, 1500, 1400, 1550];
+  let isMonthly = true;
+
+  const milkChart = new Chart(milkCtx, {
+    type: 'line',
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      datasets: [{
+        label: "Milk Yield (Liters)",
+        data: monthlyData,
+        borderColor: "rgba(52, 152, 219, 1)",
+        backgroundColor: "rgba(52, 152, 219, 0.2)",
+        tension: 0.4,
+        fill: true
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  document.getElementById("toggleView").addEventListener("click", function() {
+    if (isMonthly) {
+      milkChart.data.labels = ["2020", "2021", "2022", "2023", "2024"];
+      milkChart.data.datasets[0].data = yearlyData;
+      this.textContent = "Switch to Monthly View";
+    } else {
+      milkChart.data.labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+      milkChart.data.datasets[0].data = monthlyData;
+      this.textContent = "Switch to Yearly View";
+    }
+    isMonthly = !isMonthly;
+    milkChart.update();
+  });
+
+  // Health Alerts Chart (Doughnut)
+  new Chart(document.getElementById("healthChart"), {
+    type: 'doughnut',
+    data: {
+      labels: ["Vaccinated", "Pending", "Critical"],
+      datasets: [{
+        data: [70, 20, 10],
+        backgroundColor: ["#2ecc71", "#f1c40f", "#e74c3c"]
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: "bottom" } }
+    }
+  });
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
