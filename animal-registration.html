@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Registration - Cattle Breeds Recognition System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="toggleLanguage('en')" class="active" id="en-btn">English</button>
+        <button onclick="toggleLanguage('hi')" id="hi-btn">हिंदी</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cow"></i>
+                <span>CattleBreeds</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#features" class="nav-link">Features</a></li>
+                <li><a href="breed-recognition.html" class="nav-link">Recognition</a></li>
+                <li><a href="animal-registration.html" class="nav-link active">Registration</a></li>
+                <li><a href="upgrade.html" class="nav-link">Upgrade</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+                <li><a href="signup.html" class="nav-link">Signup</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Animal Registration Form" data-hi="पशु पंजीकरण फॉर्म">Animal Registration Form</h2>
+                <p data-en="Complete digital registration for cattle management and identification" data-hi="पशु प्रबंधन और पहचान के लिए संपूर्ण डिजिटल पंजीकरण">Complete digital registration for cattle management and identification</p>
+            </div>
+            
+            <form id="animalRegistrationForm" class="registration-form glass-card" action="https://formspree.io/f/mblangwg" method="POST">
+                <!-- Owner Information -->
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> <span data-en="Owner Information" data-hi="मालिक की जानकारी">Owner Information</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Owner Name" data-hi="मालिक का नाम">Owner Name</span>
+                                <span class="hindi">मालिक का नाम</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="ownerName" required placeholder="Enter owner name / मालिक का नाम दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Father's Name / Family ID" data-hi="पिता का नाम / पारिवारिक आईडी">Father's Name / Family ID</span>
+                                <span class="hindi">पिता का नाम / पारिवारिक आईडी</span>
+                            </label>
+                            <input type="text" name="fatherName" placeholder="Enter father's name / पिता का नाम दर्ज करें">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Mobile Number" data-hi="मोबाइल नंबर">Mobile Number</span>
+                                <span class="hindi">मोबाइल नंबर</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="tel" name="mobile" required placeholder="Enter mobile number / मोबाइल नंबर दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Village" data-hi="गांव">Village</span>
+                                <span class="hindi">गांव</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="village" required placeholder="Enter village name / गांव का नाम दर्ज करें">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="District" data-hi="जिला">District</span>
+                                <span class="hindi">जिला</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="district" required placeholder="Enter district / जिला दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="State" data-hi="राज्य">State</span>
+                                <span class="hindi">राज्य</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="state" required placeholder="Enter state / राज्य दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="PIN Code" data-hi="पिन कोड">PIN Code</span>
+                                <span class="hindi">पिन कोड</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" name="pincode" required placeholder="Enter PIN code / पिन कोड दर्ज करें">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Aadhaar / ID Proof" data-hi="आधार / पहचान प्रमाण">Aadhaar / ID Proof</span>
+                                <span class="hindi">आधार / पहचान प्रमाण</span>
+                            </label>
+                            <div class="file-upload">
+                                <input type="file" name="idProof" accept="image/*,.pdf">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-upload"></i>
+                                    <span data-en="Upload ID Proof" data-hi="पहचान प्रमाण अपलोड करें">Upload ID Proof</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animal Information -->
+                <div class="form-section">
+                    <h3><i class="fas fa-cow"></i> <span data-en="Animal Information" data-hi="पशु की जानकारी">Animal Information</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Species" data-hi="प्रजाति">Species</span>
+                                <span class="hindi">प्रजाति</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="species" required>
+                                <option value="">Select Species / प्रजाति चुनें</option>
+                                <option value="cow">Cow / गाय</option>
+                                <option value="buffalo">Buffalo / भैंस</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Breed" data-hi="नस्ल">Breed</span>
+                                <span class="hindi">नस्ल</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="breed" required>
+                                <option value="">Select Breed / नस्ल चुनें</option>
+                                <optgroup label="Cow Breeds / गाय की नस्लें">
+                                    <option value="gir">Gir / गिर</option>
+                                    <option value="sahiwal">Sahiwal / साहीवाल</option>
+                                    <option value="red-sindhi">Red Sindhi / लाल सिंधी</option>
+                                    <option value="tharparkar">Tharparkar / थारपारकर</option>
+                                    <option value="rathi">Rathi / राठी</option>
+                                    <option value="hariana">Hariana / हरियाणा</option>
+                                    <option value="holstein">Holstein Friesian / होल्स्टीन</option>
+                                    <option value="jersey">Jersey / जर्सी</option>
+                                </optgroup>
+                                <optgroup label="Buffalo Breeds / भैंस की नस्लें">
+                                    <option value="murrah">Murrah / मुर्रा</option>
+                                    <option value="jafarabadi">Jafarabadi / जाफराबादी</option>
+                                    <option value="surti">Surti / सूरती</option>
+                                    <option value="nili-ravi">Nili Ravi / नीली रावी</option>
+                                    <option value="bhadawari">Bhadawari / भदावरी</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Age (Years)" data-hi="उम्र (वर्ष)">Age (Years)</span>
+                                <span class="hindi">उम्र (वर्ष)</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="number" name="ageYears" required min="0" max="25" placeholder="Enter age in years / वर्षों में उम्र दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Age (Months)" data-hi="उम्र (महीने)">Age (Months)</span>
+                                <span class="hindi">उम्र (महीने)</span>
+                            </label>
+                            <input type="number" name="ageMonths" min="0" max="11" placeholder="Enter additional months / अतिरिक्त महीने दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Gender" data-hi="लिंग">Gender</span>
+                                <span class="hindi">लिंग</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="gender" required>
+                                <option value="">Select Gender / लिंग चुनें</option>
+                                <option value="male">Male / नर</option>
+                                <option value="female">Female / मादा</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Date of Birth" data-hi="जन्म तिथि">Date of Birth</span>
+                                <span class="hindi">जन्म तिथि</span>
+                            </label>
+                            <input type="date" name="dateOfBirth">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Purpose" data-hi="उद्देश्य">Purpose</span>
+                                <span class="hindi">उद्देश्य</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="purpose" required>
+                                <option value="">Select Purpose / उद्देश्य चुनें</option>
+                                <option value="milk">Milk / दूध</option>
+                                <option value="breeding">Breeding / प्रजनन</option>
+                                <option value="draught">Draught / खेती का काम</option>
+                                <option value="other">Other / अन्य</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Identification Details -->
+                <div class="form-section">
+                    <h3><i class="fas fa-tag"></i> <span data-en="Identification Details" data-hi="पहचान विवरण">Identification Details</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Ear Tag Number / RFID" data-hi="कान टैग नंबर / RFID">Ear Tag Number / RFID</span>
+                                <span class="hindi">कान टैग नंबर / RFID</span>
+                            </label>
+                            <input type="text" name="earTag" placeholder="Enter ear tag number / कान टैग नंबर दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Horn Shape / Markings" data-hi="सींग का आकार / निशान">Horn Shape / Markings</span>
+                                <span class="hindi">सींग का आकार / निशान</span>
+                            </label>
+                            <input type="text" name="hornShape" placeholder="Describe horn shape / सींग का आकार बताएं">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Body Color" data-hi="शरीर का रंग">Body Color</span>
+                                <span class="hindi">शरीर का रंग</span>
+                            </label>
+                            <input type="text" name="bodyColor" placeholder="Describe body color / शरीर का रंग बताएं">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Face Color" data-hi="चेहरे का रंग">Face Color</span>
+                                <span class="hindi">चेहरे का रंग</span>
+                            </label>
+                            <input type="text" name="faceColor" placeholder="Describe face color / चेहरे का रंग बताएं">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Distinctive Marks" data-hi="विशिष्ट निशान">Distinctive Marks</span>
+                                <span class="hindi">विशिष्ट निशान</span>
+                            </label>
+                            <textarea name="distinctiveMarks" rows="3" placeholder="Describe any scars, spots, or unique markings / कोई निशान, धब्बे या अनोखे चिह्न बताएं"></textarea>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Animal Photograph" data-hi="पशु की तस्वीर">Animal Photograph</span>
+                                <span class="hindi">पशु की तस्वीर</span>
+                                <span class="required">*</span>
+                            </label>
+                            <div class="file-upload">
+                                <input type="file" name="animalPhoto" accept="image/*" required>
+                                <div class="file-upload-label">
+                                    <i class="fas fa-camera"></i>
+                                    <span data-en="Upload Animal Photo" data-hi="पशु की तस्वीर अपलोड करें">Upload Animal Photo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health & Breeding Records -->
+                <div class="form-section">
+                    <h3><i class="fas fa-heartbeat"></i> <span data-en="Health & Breeding Records" data-hi="स्वास्थ्य और प्रजनन रिकॉर्ड">Health & Breeding Records</span></h3>
+                    
+                    <div class="form-group-reg">
+                        <label class="bilingual-label">
+                            <span class="english" data-en="Vaccination Status" data-hi="टीकाकरण की स्थिति">Vaccination Status</span>
+                            <span class="hindi">टीकाकरण की स्थिति</span>
+                        </label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="vaccination" value="fmd" id="fmd">
+                                <label for="fmd">FMD / मुंह खुर रोग</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="vaccination" value="hs" id="hs">
+                                <label for="hs">HS / रक्तस्राव</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="vaccination" value="bq" id="bq">
+                                <label for="bq">BQ / काला चतुर्थांश</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" name="vaccination" value="brucellosis" id="brucellosis">
+                                <label for="brucellosis">Brucellosis / ब्रुसेलोसिस</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Deworming Status" data-hi="कृमि मुक्ति की स्थिति">Deworming Status</span>
+                                <span class="hindi">कृमि मुक्ति की स्थिति</span>
+                            </label>
+                            <select name="dewormingStatus">
+                                <option value="">Select Status / स्थिति चुनें</option>
+                                <option value="done">Done / हो गया</option>
+                                <option value="pending">Pending / बाकी है</option>
+                                <option value="not-required">Not Required / आवश्यक नहीं</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Pregnancy Status" data-hi="गर्भावस्था की स्थिति">Pregnancy Status</span>
+                                <span class="hindi">गर्भावस्था की स्थिति</span>
+                            </label>
+                            <select name="pregnancyStatus">
+                                <option value="">Select Status / स्थिति चुनें</option>
+                                <option value="yes">Yes / हां</option>
+                                <option value="no">No / नहीं</option>
+                                <option value="not-applicable">Not Applicable / लागू नहीं</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Calving History" data-hi="बछड़े देने का इतिहास">Calving History</span>
+                                <span class="hindi">बछड़े देने का इतिहास</span>
+                            </label>
+                            <input type="number" name="calvingHistory" min="0" placeholder="Number of calves / बछड़ों की संख्या">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Last Calving Date" data-hi="अंतिम बछड़े देने की तारीख">Last Calving Date</span>
+                                <span class="hindi">अंतिम बछड़े देने की तारीख</span>
+                            </label>
+                            <input type="date" name="lastCalvingDate">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Veterinary Notes" data-hi="पशु चिकित्सक की टिप्पणी">Veterinary Notes</span>
+                                <span class="hindi">पशु चिकित्सक की टिप्पणी</span>
+                            </label>
+                            <textarea name="vetNotes" rows="3" placeholder="Any medical history or notes / कोई चिकित्सा इतिहास या टिप्पणी"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milk Production -->
+                <div class="form-section">
+                    <h3><i class="fas fa-tint"></i> <span data-en="Milk Production (if applicable)" data-hi="दूध उत्पादन (यदि लागू हो)">Milk Production (if applicable)</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Average Daily Milk Yield (litres)" data-hi="औसत दैनिक दूध उत्पादन (लीटर)">Average Daily Milk Yield (litres)</span>
+                                <span class="hindi">औसत दैनिक दूध उत्पादन (लीटर)</span>
+                            </label>
+                            <input type="number" name="dailyMilkYield" step="0.1" min="0" placeholder="Enter daily milk yield / दैनिक दूध उत्पादन दर्ज करें">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Lactation Number" data-hi="स्तनपान संख्या">Lactation Number</span>
+                                <span class="hindi">स्तनपान संख्या</span>
+                            </label>
+                            <input type="number" name="lactationNumber" min="0" placeholder="Current lactation number / वर्तमान स्तनपान संख्या">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> <span data-en="Additional Information" data-hi="अतिरिक्त जानकारी">Additional Information</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Source of Animal" data-hi="पशु का स्रोत">Source of Animal</span>
+                                <span class="hindi">पशु का स्रोत</span>
+                                <span class="required">*</span>
+                            </label>
+                            <select name="animalSource" required>
+                                <option value="">Select Source / स्रोत चुनें</option>
+                                <option value="purchased">Purchased / खरीदा गया</option>
+                                <option value="born-on-farm">Born on Farm / फार्म पर जन्मा</option>
+                                <option value="gifted">Gifted / उपहार में मिला</option>
+                                <option value="inherited">Inherited / विरासत में मिला</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Insurance Details" data-hi="बीमा विवरण">Insurance Details</span>
+                                <span class="hindi">बीमा विवरण</span>
+                            </label>
+                            <input type="text" name="insuranceDetails" placeholder="Insurance policy details / बीमा पॉलिसी विवरण">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Shelter Type" data-hi="आश्रय का प्रकार">Shelter Type</span>
+                                <span class="hindi">आश्रय का प्रकार</span>
+                            </label>
+                            <select name="shelterType">
+                                <option value="">Select Shelter Type / आश्रय का प्रकार चुनें</option>
+                                <option value="open">Open / खुला</option>
+                                <option value="covered">Covered / ढका हुआ</option>
+                                <option value="semi-covered">Semi-Covered / अर्ध-ढका</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Feeding Type" data-hi="आहार का प्रकार">Feeding Type</span>
+                                <span class="hindi">आहार का प्रकार</span>
+                            </label>
+                            <select name="feedingType">
+                                <option value="">Select Feeding Type / आहार का प्रकार चुनें</option>
+                                <option value="green-fodder">Green Fodder / हरा चारा</option>
+                                <option value="dry-fodder">Dry Fodder / सूखा चारा</option>
+                                <option value="concentrate">Concentrate / दाना</option>
+                                <option value="mixed">Mixed / मिश्रित</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Verification -->
+                <div class="form-section">
+                    <h3><i class="fas fa-shield-alt"></i> <span data-en="Digital Verification" data-hi="डिजिटल सत्यापन">Digital Verification</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="GPS Location" data-hi="GPS स्थान">GPS Location</span>
+                                <span class="hindi">GPS स्थान</span>
+                            </label>
+                            <button type="button" class="btn btn-secondary" onclick="getLocation()">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="Get Current Location" data-hi="वर्तमान स्थान प्राप्त करें">Get Current Location</span>
+                            </button>
+                            <input type="text" name="gpsLocation" id="gpsLocation" readonly placeholder="GPS coordinates will appear here / GPS निर्देशांक यहाँ दिखेंगे">
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Field Worker / Enumerator ID" data-hi="फील्ड वर्कर / गणनाकर्ता आईडी">Field Worker / Enumerator ID</span>
+                                <span class="hindi">फील्ड वर्कर / गणनाकर्ता आईडी</span>
+                            </label>
+                            <input type="text" name="fieldWorkerId" placeholder="Enter field worker ID / फील्ड वर्कर आईडी दर्ज करें">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Date of Registration" data-hi="पंजीकरण की तारीख">Date of Registration</span>
+                                <span class="hindi">पंजीकरण की तारीख</span>
+                                <span class="required">*</span>
+                            </label>
+                            <input type="date" name="registrationDate" required>
+                        </div>
+                        
+                        <div class="form-group-reg">
+                            <label class="bilingual-label">
+                                <span class="english" data-en="Owner Signature / Thumb Impression" data-hi="मालिक के हस्ताक्षर / अंगूठे का निशान">Owner Signature / Thumb Impression</span>
+                                <span class="hindi">मालिक के हस्ताक्षर / अंगूठे का निशान</span>
+                            </label>
+                            <div class="file-upload">
+                                <input type="file" name="ownerSignature" accept="image/*">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-signature"></i>
+                                    <span data-en="Upload Signature" data-hi="हस्ताक्षर अपलोड करें">Upload Signature</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-save"></i>
+                        <span data-en="Register Animal" data-hi="पशु पंजीकृत करें">Register Animal</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(err => {
+                    throw new Error(err.error || 'Form submission error');
+                });
+            }
+        })
+        .then(data => {
+            alert("Your message has been sent successfully!");
+            form.reset();
+        })
+        .catch(error => {
+            alert("Error: " + error.message);
+        });
+    });
+</script>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> -->
+    <df-messenger 
+        intent="WELCOME" 
+        chat-title="Breed Bot" 
+        agent-id="ee605e66-5085-413c-b3c7-bd007646bf78" 
+        language-code="en"
+     style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    </df-messenger>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
