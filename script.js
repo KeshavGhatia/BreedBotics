@@ -269,7 +269,7 @@ async function recognizeBreed() {
 
     try {
         // 1. Get backend ngrok URL
-        const urlResponse = await fetch("https://a8cbe774030c.ngrok-free.app/ngrok_url");
+        const urlResponse = await fetch("https://83b0ee33841a.ngrok-free.app");
         const urlData = await urlResponse.json();
         const backendUrl = urlData.ngrok_url;
 
