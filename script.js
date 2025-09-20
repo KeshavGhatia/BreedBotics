@@ -140,15 +140,12 @@ const breedResult = document.getElementById('breedResult');
 const sampleBreeds = [
     {
         name: 'Holstein Friesian',
-        Nili-Ravi Buffalo (Punjab),
-    Physical Traits: Large-sized with a wedge-shaped body; black coat with white markings.,
-
-Milk Quality: High yield of 1,800–2,500 liters per lactation with 6.5% butterfat content.,
-
-Breeding Tips: Adaptable to various climates; suitable for both draught and milk production.,
-
-Common Diseases: Prone to mastitis and heat stress
-confidence: 88
+        origin: 'India',
+        characteristics: 'Medium to large-sized beef cattle, naturally polled (hornless). Known for excellent meat quality and marbling.',
+        temperament: 'Generally calm and easy to handle, good maternal instincts.',
+        care: 'Hardy breed that adapts well to various climates. Requires good pasture management.',
+        image: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
+        confidence: 88
     },
     {
         name: 'Angus',
