@@ -363,7 +363,7 @@ async function recognizeBreed() {
 
     try {
         // ⚠️ Replace with your latest ngrok URL after each restart
-        const backendBase = "https://c5ef73bc0dca.ngrok-free.app";
+        const backendBase = "https://bf00e7d423f8.ngrok-free.app";
 
         // Prepare form data
         const formData = new FormData();
