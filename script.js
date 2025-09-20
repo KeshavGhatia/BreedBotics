@@ -140,12 +140,15 @@ const breedResult = document.getElementById('breedResult');
 const sampleBreeds = [
     {
         name: 'Holstein Friesian',
-        origin: 'Netherlands and Germany',
-        characteristics: 'Large-sized dairy cattle with distinctive black and white markings. Known for high milk production and docile temperament.',
-        temperament: 'Docile and easy to handle, making them ideal for dairy operations.',
-        care: 'Requires high-quality feed and regular milking. Sensitive to heat stress.',
-        image: 'https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-        confidence: 95
+        Nili-Ravi Buffalo (Punjab),
+    Physical Traits: Large-sized with a wedge-shaped body; black coat with white markings.,
+
+Milk Quality: High yield of 1,800–2,500 liters per lactation with 6.5% butterfat content.,
+
+Breeding Tips: Adaptable to various climates; suitable for both draught and milk production.,
+
+Common Diseases: Prone to mastitis and heat stress
+confidence: 88
     },
     {
         name: 'Angus',
